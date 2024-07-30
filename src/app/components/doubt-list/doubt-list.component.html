@@ -1,0 +1,24 @@
+<ng-container *ngIf="banks?.length; else empty">
+    <div class="container">
+        <div class="doubt-list">
+            <div *ngFor="let bank of banks" 
+                [routerLink]="['/doubt', bank.id]"
+                class="bank-line">
+                <span>{{bank.name}}</span>
+                <span>{{bank.doubt?.totalSum | currency: 'RUB':'symbol-narrow'}}</span>
+            </div>
+            </div>
+    </div>
+</ng-container>
+
+<ng-container>
+    <div [routerLink]="['/create']" 
+        class="btn btn-new-doubt" 
+        type="button">Добавить новый долг</div>
+</ng-container>
+
+<ng-template #empty>
+    <div class="absolute-centered">
+        Поздравляем! У вас нет долгов!
+    </div>
+</ng-template>

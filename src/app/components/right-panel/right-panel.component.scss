@@ -1,0 +1,15 @@
+:host {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    top: 0;
+    right: -250px;
+    z-index: 2;
+    box-shadow: 0 0 10px 0px #000;
+    background: #fff;
+    transition: all ease-in 0.1s;
+
+    &.open {
+        right: 0; 
+    }
+}

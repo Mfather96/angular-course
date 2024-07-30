@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
     styleUrl: './app.component.scss',
 })
 export class AppComponent {
-    public num: number = 0;
-    title = 'angular-course';
+    
 }

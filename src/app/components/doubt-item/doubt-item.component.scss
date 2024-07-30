@@ -1,0 +1,17 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #000;
+
+    .card-head,
+    .card-body,
+    .card-desc-line {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card-head {
+        font-size: 10px;
+    }
+}

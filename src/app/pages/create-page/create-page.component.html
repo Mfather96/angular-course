@@ -1,0 +1,71 @@
+<div routerLink="/"
+    class="btn btn-go-back">
+    На главную
+</div>
+
+<form [formGroup]="form!" (ngSubmit)="submit()">
+    <h3>Создание нового кредита</h3>
+    <div class="control">
+        <label for="name">Название банка</label>
+        <input type="text" 
+            id="name" 
+            placeholder="Tinkoff" 
+            formControlName="name">
+        <div class="errors"></div>
+    </div>
+    <div class="control">
+        <label for="creditName">Имя кредита</label>
+        <input type="text" 
+            id="creditName" 
+            placeholder="Автомобиль"
+            formControlName="creditName">
+        <div class="errors"></div>
+    </div>
+    <div class="credit-details" formGroupName="doubt">
+        <h3 class="title">Детали кредита</h3>
+
+        <div class="control">
+            <label for="totalSum">Общая сумма долга</label>
+            <input type="number" 
+                id="totalSum" 
+                placeholder="1000"
+                formControlName="totalSum">
+            <div class="errors"></div>
+        </div>
+        <div class="control">
+            <label for="payPerMonth">Ежемесячный платеж</label>
+            <input type="number" 
+                id="payPerMonth" 
+                placeholder="150"
+                formControlName="payPerMonth">
+            <div class="errors"></div>
+        </div>
+        <div class="control">
+            <label for="interestRate">Процентная ставка</label>
+            <input type="number" 
+                id="interestRate" 
+                placeholder="8.3%"
+                formControlName="interestRate">
+            <div class="errors"></div>
+        </div>
+        <div class="control">
+            <label for="years">Сколько лет платить</label>
+            <input type="number" 
+                id="years" 
+                placeholder="10"
+                formControlName="years">
+            <div class="errors"></div>
+        </div>
+        <div class="control">
+            <label for="monthes">Сколько месяцев обязательных платежей</label>
+            <input type="number" 
+                id="monthes" 
+                placeholder="120"
+                formControlName="monthes">
+            <div class="errors"></div>
+        </div>
+    </div>
+    <button class="btn btn-submit" 
+        type="submit" 
+        [disabled]="form?.invalid">Отправить</button>
+</form>

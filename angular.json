@@ -36,7 +36,7 @@
                                 "input": "public"
                             }
                         ],
-                        "styles": ["src/styles.scss"],
+                        "styles": ["src/styles.scss", "src/mainStyles/normalize.scss", "src/mainStyles/global-styles.scss"],
                         "scripts": []
                     },
                     "configurations": {

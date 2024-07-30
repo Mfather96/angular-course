@@ -1,0 +1,30 @@
+<ng-container *ngIf="bank; else errorTpl">
+    <div class="card">
+        <div class="card-head">
+            <div class="bank__name">{{bank.name}}</div>
+            <div class="date">12.02.24</div>
+        </div>
+        <div class="card-body">
+            <div class="bank__credit-name">{{bank.creditName || 'Кредит'}}</div>
+            <div class="bank__total-sum">Общий долг: {{bank.doubt?.totalSum || 0}}</div>
+        </div>
+        <div class="card-description">
+            <div class="bank__pay-per-month card-desc-line">
+                <span>Ежемесячный платеж:</span> 
+                <span>{{bank.doubt?.payPerMonth || 0}}</span>
+            </div>
+            <div class="bank__amount-monthes card-desc-line">
+               <span> Количество месяцев:</span> 
+               <span>{{bank.doubt?.monthes || 0}}</span>
+            </div>
+            <div class="bank__amount-years card-desc-line">
+                 <span>Количество лет:</span>
+                <span>{{bank.doubt?.years || 0}}</span>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #errorTpl>
+    <div>Упс, что-то пошло не так</div>
+</ng-template>
