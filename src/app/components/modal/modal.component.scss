@@ -1,0 +1,22 @@
+:host {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, .5);
+
+        .modal-container {
+            width: 80%;
+            height: 200px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

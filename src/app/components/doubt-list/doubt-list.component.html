@@ -1,7 +1,7 @@
 <ng-container *ngIf="banks?.length; else empty">
     <div class="container">
         <div class="doubt-list">
-            <div *ngFor="let bank of banks" 
+            <div *ngFor="let bank of banks"
                 [routerLink]="['/doubt', bank.id]"
                 class="bank-line">
                 <span>{{bank.name}}</span>
@@ -11,11 +11,11 @@
     </div>
 </ng-container>
 
-<ng-container>
-    <div [routerLink]="['/create']" 
-        class="btn btn-new-doubt" 
+<!-- <ng-container>
+    <div [routerLink]="['/create']"
+        class="btn btn-new-doubt"
         type="button">Добавить новый долг</div>
-</ng-container>
+</ng-container> -->
 
 <ng-template #empty>
     <div class="absolute-centered">

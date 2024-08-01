@@ -1,3 +1,18 @@
 :host {
     position: relative;
+    display: block;
+    height: 100vh;
+}
+
+.btn-open-right-panel {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 50px;
 }

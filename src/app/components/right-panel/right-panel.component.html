@@ -1,3 +1,9 @@
-<div class="panel">
-    here is panel
+<div class="panel-content">
+    <div class="title">Меню</div>
+    <div class="menu">
+        <div [routerLink]="['/doubt-list']" class="menu-item">Все мои долги</div>
+        <div [routerLink]="['/create']" class="menu-item">Создание нового долга</div>
+    </div>
 </div>
+
+<div class="btn btn-close-panel" (click)="closePanel()">Закрыть меню</div>

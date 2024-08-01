@@ -1,1 +1,7 @@
 <router-outlet></router-outlet>
+<!-- <app-modal #viewport></app-modal> -->
+<ng-container #viewport></ng-container>
+
+<ng-template #modal>
+    <app-modal (closing)="closeModal($event)"></app-modal>
+</ng-template>

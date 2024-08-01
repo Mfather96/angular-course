@@ -1,5 +1,7 @@
-<app-doubt-list></app-doubt-list>
-<app-right-panel [class.open]="openPanel"></app-right-panel>
-<div class="btn btn-open-right-panel" 
+<h1>Главная</h1>
+<app-right-panel [class.open]="openPanel" (click)="$event.stopPropagation()" (closingPanel)="openPanel = $event"></app-right-panel>
+<div class="btn btn-open-right-panel"
     (click)="openPanel = true; $event.stopPropagation()"
->Открыть панель</div>
+>Открыть меню</div>
+
+<div class="btn btn-open-modal" (click)="openModal()">Открыть модалку</div>

@@ -11,6 +11,8 @@ import { RightPanelComponent } from './components/right-panel/right-panel.compon
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { DoubtItemComponent } from './components/doubt-item/doubt-item.component';
 import { DoubtListComponent } from './components/doubt-list/doubt-list.component';
+import { DoubtListPageComponent } from './pages/doubt-list-page/doubt-list-page.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +22,9 @@ import { DoubtListComponent } from './components/doubt-list/doubt-list.component
         MainPageComponent,
         RightPanelComponent,
         DoubtItemComponent,
-        DoubtListComponent
+        DoubtListComponent,
+        DoubtListPageComponent,
+        ModalComponent
     ],
     imports: [
     BrowserModule,

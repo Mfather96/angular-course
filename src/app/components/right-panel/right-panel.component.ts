@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-right-panel',
@@ -6,8 +6,13 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
   styleUrl: './right-panel.component.scss'
 })
 export class RightPanelComponent implements OnInit{
-  
+
+    @Output() closingPanel = new EventEmitter<boolean>();
   ngOnInit(): void {
-    // this.isOpen = this.openPanel
   }
+
+  closePanel(): void {
+    this.closingPanel.emit(false)
+  }
+
 }
