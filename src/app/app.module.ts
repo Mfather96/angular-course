@@ -13,26 +13,29 @@ import { DoubtItemComponent } from './components/doubt-item/doubt-item.component
 import { DoubtListComponent } from './components/doubt-list/doubt-list.component';
 import { DoubtListPageComponent } from './pages/doubt-list-page/doubt-list-page.component';
 import { ModalComponent } from './components/modal/modal.component';
+import {DoubtListPageModule} from './pages/doubt-list-page/doubt-list-page.module';
+import { CommonInfoComponent } from './components/common-info/common-info.component';
 
 @NgModule({
     declarations: [
-        AppComponent, 
-        CreatePageComponent, 
-        DoubtPageComponent, 
+        AppComponent,
+        CreatePageComponent,
+        DoubtPageComponent,
         MainPageComponent,
         RightPanelComponent,
         DoubtItemComponent,
         DoubtListComponent,
-        DoubtListPageComponent,
-        ModalComponent
+        ModalComponent,
+        CommonInfoComponent,
     ],
     imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule
-],
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
+        DoubtListPageModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

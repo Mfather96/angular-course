@@ -1,0 +1,10 @@
+.container {
+    padding: 10px;
+    .total-info {
+        display: flex;
+        justify-content: space-between;
+    }
+    .additional {
+        font-size: 12px;
+    }
+}

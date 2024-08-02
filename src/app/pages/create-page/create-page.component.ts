@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IBank } from '../../system/interfaces/interface';
-import { DoubtServiceService } from '../../system/services/doubt-service.service';
+import { DoubtService } from '../../system/services/doubt.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
   styleUrl: './create-page.component.scss'
 })
 export class CreatePageComponent implements OnInit{
-  
+
   @Output() creatingNewDoubt = new EventEmitter<IBank>()
 
   public form: FormGroup | null = null;
 
   constructor(
-    private doubtService: DoubtServiceService,
+    private doubtService: DoubtService,
     private route: Router) {}
 
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class CreatePageComponent implements OnInit{
 
     let doubtLength = this.doubtService.getBanksLength();
     const bankConfig = {
-      ...this.form?.value, 
+      ...this.form?.value,
       id: doubtLength + 1
     };
     this.doubtService.setBank(bankConfig);

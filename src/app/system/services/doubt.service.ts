@@ -4,11 +4,12 @@ import { IBank, IDoubt } from '../interfaces/interface';
 @Injectable({
   providedIn: 'root'
 })
-export class DoubtServiceService {
+export class DoubtService {
 
   private banks: IBank[] = [
     {
       name: 'Tinkoff',
+      creditName: 'кредитка',
       id: 1,
       doubt: {
         monthes: 360,
@@ -20,6 +21,7 @@ export class DoubtServiceService {
     },
     {
       name: 'Sber',
+      creditName: 'Потребительский кредит',
       id: 2,
       doubt: {
         monthes: 360,
@@ -32,6 +34,7 @@ export class DoubtServiceService {
     {
       name: 'VTB',
       id: 3,
+      creditName: 'Ипотека',
       doubt: {
         monthes: 360,
         payPerMonth: 42000,
@@ -41,7 +44,7 @@ export class DoubtServiceService {
       }
     },
   ];
-  
+
   constructor() { }
 
   public getBanks(): IBank[] | null {
@@ -55,7 +58,7 @@ export class DoubtServiceService {
   public getDoubt(idBank: number): IDoubt | undefined {
     if (!this.banks?.length) {
       return undefined
-    } 
+    }
 
     for(let i = 0; i < this.banks.length; i++) {
 

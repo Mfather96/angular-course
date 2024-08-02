@@ -1,3 +1,13 @@
-<div [routerLink]="['/']" class="btn">Назад</div>
+<div [routerLink]="['/']" class="btn">На главную</div>
 
-<app-doubt-list></app-doubt-list>
+<div class="tab-navigation">
+    <div class="tab-button doubt-list"
+        [routerLink]="['/doubts/doubt-list']"
+        routerLinkActive="active">Все кредиты</div>
+    <div class="tab-button common-info"
+        [routerLink]="['/doubts/common-info']"
+        routerLinkActive="active">Общая информация</div>
+</div>
+
+<!-- <app-doubt-list></app-doubt-list> -->
+<router-outlet></router-outlet>

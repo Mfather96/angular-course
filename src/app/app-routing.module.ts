@@ -5,12 +5,16 @@ import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { DoubtPageComponent } from './pages/doubt-page/doubt-page.component';
 import {DoubtListComponent} from './components/doubt-list/doubt-list.component';
 import {DoubtListPageComponent} from './pages/doubt-list-page/doubt-list-page.component';
+import {CommonInfoComponent} from './components/common-info/common-info.component';
 
 const routes: Routes = [
     {path: '', component: MainPageComponent},
     {path: 'create', component: CreatePageComponent},
     {path: 'doubt/:id', component: DoubtPageComponent},
-    {path: 'doubt-list', component: DoubtListPageComponent}
+    {path: 'doubts', component: DoubtListPageComponent, children: [
+        {path: 'doubt-list', component: DoubtListComponent},
+        {path: 'common-info', component: CommonInfoComponent},
+    ]},
 ];
 
 @NgModule({

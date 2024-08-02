@@ -1,8 +1,8 @@
 export interface IBank {
     name: string,
     id: number,
-    creditName?: string,
-    doubt?: IDoubt,
+    creditName: string,
+    doubt: IDoubt,
 }
 
 export interface IDoubt {
@@ -10,5 +10,10 @@ export interface IDoubt {
     monthes: number,
     years: number,
     payPerMonth: number,
-    interestRate?: number,
+    interestRate: number,
+}
+
+export interface ITotalInfo {
+    commonDoubtSum: number,
+    commonPayPerMonth: number,
 }

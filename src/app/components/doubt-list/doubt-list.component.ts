@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DoubtServiceService } from '../../system/services/doubt-service.service';
+import { DoubtService } from '../../system/services/doubt.service';
 import { IBank } from '../../system/interfaces/interface';
 
 @Component({
@@ -11,7 +11,7 @@ export class DoubtListComponent implements OnInit {
   public banks: IBank[] | null = null;
 
   constructor(
-    private doubtService: DoubtServiceService,
+    private doubtService: DoubtService,
   ) {}
 
   ngOnInit(): void {

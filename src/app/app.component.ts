@@ -7,7 +7,7 @@ import {ModalService} from './system/services/modal.service';
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit, OnChanges, AfterViewInit{
+export class AppComponent implements OnInit{
     @ViewChild('modal', {read: TemplateRef}) modal!: TemplateRef<unknown>;
     @ViewChild('viewport', {read: ViewContainerRef}) private readonly viewport!: ViewContainerRef;
 
@@ -16,18 +16,6 @@ export class AppComponent implements OnInit, OnChanges, AfterViewInit{
     ){}
 
     ngOnInit(): void {
-    }
-
-    ngAfterViewInit(): void {
-        setTimeout(() => {
-            this.modalService.openModal(this.viewport, this.modal)
-            // this.viewport.createEmbeddedView(this.modal)
-        }, 3000)
-
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        // this.viewport.clear();
     }
 
     public closeModal(event: boolean) {
