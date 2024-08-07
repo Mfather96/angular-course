@@ -4,11 +4,18 @@
 
 <div class="tab-navigation">
     <div class="tab-button doubt-list"
-        [routerLink]="['/doubt/' [currentBank ? currentBank.id : 0], '/set-pay']"
-        routerLinkActive="active">Внести платеж</div>
+        (click)="payHistory = false"
+        [class.active]="!payHistory">Внести платеж</div>
     <div class="tab-button common-info"
-        [routerLink]="['/doubt/', [currentBank ? currentBank.id : 0], '/history']"
-        routerLinkActive="active">История</div>
+        (click)="payHistory = true"
+        [class.active]="payHistory">История</div>
 </div>
-<!-- <app-pay-history [bank]="currentBank"></app-pay-history> -->
- <router-outlet></router-outlet>
+
+<ng-template [ngIf]="payHistory" [ngIfElse]="setPay">
+    <app-pay-history [bank]="currentBank"></app-pay-history>
+</ng-template>
+
+<ng-template #setPay>
+    <app-set-pay [bank]="currentBank"></app-set-pay>
+</ng-template>
+ <!-- <router-outlet></router-outlet> -->

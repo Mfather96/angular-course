@@ -12,10 +12,7 @@ import { PayHistoryComponent } from './components/pay-history/pay-history.compon
 const routes: Routes = [
     {path: '', component: MainPageComponent},
     {path: 'create', component: CreatePageComponent},
-    {path: 'doubt/:id', component: DoubtPageComponent, children: [
-        {path: 'set-pay', component: SetPayComponent},
-        {path: 'history', component: PayHistoryComponent}
-    ]},
+    {path: 'doubt/:id', component: DoubtPageComponent},
     {path: 'doubts', component: DoubtListPageComponent, children: [
         {path: 'doubt-list', component: DoubtListComponent},
         {path: 'common-info', component: CommonInfoComponent},

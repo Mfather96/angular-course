@@ -1,1 +1,29 @@
-<p>set-pay works!</p>
+<form>
+    <div class="select">
+        <div id="payOrNot" class="select">
+            <div class="pays pay"
+                (click)="isPayBackSelect = false"
+                [class.active]="!isPayBackSelect">Списать</div>
+            <div class="pays pay-back"
+                (click)="isPayBackSelect = true"
+                [class.active]="isPayBackSelect">Начислить</div>
+        </div>
+    </div>
+
+    <div class="control">
+        <label for="sum">Сумма</label>
+        <input id="sum" type="number" placeholder="Например: 5000">
+    </div>
+
+    <div class="control">
+        <label for="monthes">Сократить количество месяцев на:</label>
+        <input id="monthes" type="number" placeholder="Например: 1">
+    </div>
+
+    <div class="control">
+        <label for="years">Сократить количество лет на:</label>
+        <input id="years" type="number" placeholder="Например: 1">
+    </div>
+
+    <button class="btn btn-send-pay">Подтвердить</button>
+</form>

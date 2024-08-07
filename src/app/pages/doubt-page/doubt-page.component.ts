@@ -9,8 +9,9 @@ import { Route, Router } from '@angular/router';
   styleUrl: './doubt-page.component.scss'
 })
 export class DoubtPageComponent implements OnInit{
-  private banks: IBank[] | null = null;
-  public currentBank: IBank | null = null;
+    public currentBank: IBank | null = null;
+    public payHistory: boolean | null = null;
+    private banks: IBank[] | null = null;
   constructor(
     private doubtService: DoubtService,
     private route: Router

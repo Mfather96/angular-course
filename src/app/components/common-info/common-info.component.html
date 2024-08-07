@@ -16,5 +16,10 @@
             <span>Общая сумма платежей в месяц</span>
             <span class="currency">{{totalInfo.commonPayPerMonth | currency: 'RUB':'symbol-narrow'}}</span>
         </div>
+
+        <div class="total-info total-pay-per-month">
+            <span>Всего выплачено за всё время</span>
+            <span class="currency positive">{{totalInfo.commonPayedAlready | currency: 'RUB':'symbol-narrow'}}</span>
+        </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {IBank} from '../../system/interfaces/interface';
 
 @Component({
   selector: 'app-set-pay',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './set-pay.component.scss'
 })
 export class SetPayComponent {
+    @Input() bank: IBank | null = null;
+    public isPayBackSelect: boolean = false;
 
 }

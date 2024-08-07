@@ -17,6 +17,7 @@ export class DoubtService {
         totalSum: 2570000,
         years: 30,
         interestRate: 19.7,
+        payed: 0,
       }
     },
     {
@@ -29,6 +30,7 @@ export class DoubtService {
         totalSum: 440000,
         years: 5,
         interestRate: 25,
+        payed: 0,
       }
     },
     {
@@ -41,6 +43,7 @@ export class DoubtService {
         totalSum: 90000,
         years: 0,
         interestRate: 30,
+        payed: 0,
       }
     },
     {
@@ -53,6 +56,7 @@ export class DoubtService {
         totalSum: 150000,
         years: 0,
         interestRate: 30,
+        payed: 0,
       }
     },
     {
@@ -65,6 +69,7 @@ export class DoubtService {
         totalSum: 60000,
         years: 0,
         interestRate: 0,
+        payed: 5000,
       }
     },
     {
@@ -77,6 +82,7 @@ export class DoubtService {
         totalSum: 58000,
         years: 0,
         interestRate: 30,
+        payed: 12000,
       }
     },
   ];

@@ -66,6 +66,10 @@
 }
 
 .currency {
-    // font-weight: 700;
     color: rgb(196, 0, 0);
+
+    &.positive {
+        font-weight: 700;
+        color: green;
+    }
 }

@@ -11,11 +11,13 @@ export interface IDoubt {
     years: number,
     payPerMonth: number,
     interestRate: number,
+    payed: number,
 }
 
 export interface ITotalInfo {
     commonDoubtSum: number,
     commonPayPerMonth: number,
+    commonPayedAlready: number,
 }
 
 export interface IHistoryPay {
