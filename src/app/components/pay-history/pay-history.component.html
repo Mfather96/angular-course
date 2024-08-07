@@ -1,0 +1,9 @@
+<div *ngIf="history.length; else empty">
+
+</div>
+
+<ng-template #empty>
+    <div>
+        История пока пуста
+    </div>
+</ng-template>

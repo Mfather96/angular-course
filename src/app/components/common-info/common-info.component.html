@@ -2,7 +2,7 @@
     <div class="line-container">
         <div class="total-info total-sum">
             <span>Общая сумма долга</span>
-            <span>{{totalInfo.commonDoubtSum}}</span>
+            <span class="currency">{{totalInfo.commonDoubtSum | currency: 'RUB':'symbol-narrow'}}</span>
         </div>
         <div class="additional">
             <p>За кредит 1000</p>
@@ -14,7 +14,7 @@
     <div class="line-container">
         <div class="total-info total-pay-per-month">
             <span>Общая сумма платежей в месяц</span>
-            <span>{{totalInfo.commonPayPerMonth}}</span>
+            <span class="currency">{{totalInfo.commonPayPerMonth | currency: 'RUB':'symbol-narrow'}}</span>
         </div>
     </div>
 </div>

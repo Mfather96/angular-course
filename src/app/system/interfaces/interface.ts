@@ -17,3 +17,11 @@ export interface ITotalInfo {
     commonDoubtSum: number,
     commonPayPerMonth: number,
 }
+
+export interface IHistoryPay {
+    bank: string,
+    creditName: string,
+    sumPay: number,
+    sumBack: number,
+    reason: string,
+}

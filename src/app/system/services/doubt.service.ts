@@ -8,8 +8,8 @@ export class DoubtService {
 
   private banks: IBank[] = [
     {
-      name: 'Tinkoff',
-      creditName: 'кредитка',
+      name: 'ВТБ',
+      creditName: 'Ипотека',
       id: 1,
       doubt: {
         monthes: 360,
@@ -24,23 +24,59 @@ export class DoubtService {
       creditName: 'Потребительский кредит',
       id: 2,
       doubt: {
-        monthes: 360,
-        payPerMonth: 42000,
-        totalSum: 2570000,
-        years: 30,
-        interestRate: 19.7,
+        monthes: 60,
+        payPerMonth: 13000,
+        totalSum: 440000,
+        years: 5,
+        interestRate: 25,
       }
     },
     {
-      name: 'VTB',
+      name: 'Тинькофф',
       id: 3,
-      creditName: 'Ипотека',
+      creditName: 'Кредитка Даши',
       doubt: {
-        monthes: 360,
-        payPerMonth: 42000,
-        totalSum: 2570000,
-        years: 30,
-        interestRate: 19.7,
+        monthes: 0,
+        payPerMonth: 3500,
+        totalSum: 90000,
+        years: 0,
+        interestRate: 30,
+      }
+    },
+    {
+      name: 'Тинькофф',
+      id: 4,
+      creditName: 'Кредитка Вовы',
+      doubt: {
+        monthes: 0,
+        payPerMonth: 5500,
+        totalSum: 150000,
+        years: 0,
+        interestRate: 30,
+      }
+    },
+    {
+      name: 'SoftGamings',
+      id: 5,
+      creditName: 'Заём для риелтора',
+      doubt: {
+        monthes: 12,
+        payPerMonth: 5000,
+        totalSum: 60000,
+        years: 0,
+        interestRate: 0,
+      }
+    },
+    {
+      name: 'Макс Молчанов',
+      id: 6,
+      creditName: 'Рассрочка за ноут',
+      doubt: {
+        monthes: 10,
+        payPerMonth: 6000,
+        totalSum: 58000,
+        years: 0,
+        interestRate: 30,
       }
     },
   ];

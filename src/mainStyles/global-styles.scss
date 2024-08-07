@@ -41,6 +41,7 @@
         color: #7e7e7e;
         transition: all ease 0.2s;
         position: relative;
+        cursor: pointer;
 
         &.active {
             color: #000;
@@ -62,4 +63,9 @@
         }
 
     }
+}
+
+.currency {
+    // font-weight: 700;
+    color: rgb(196, 0, 0);
 }

@@ -2,12 +2,12 @@
     <div class="container">
         <div class="doubt-list">
             <div *ngFor="let bank of banks"
-                [routerLink]="['/doubt', bank.id]"
+                [routerLink]="['/doubt', bank.id, 'set-pay']"
                 class="bank-line">
                 <span class="bank-name">{{bank.name}}
                     <span class="credit-name">{{bank.creditName}}</span>
                 </span>
-                <span>{{bank.doubt?.totalSum | currency: 'RUB':'symbol-narrow'}}</span>
+                <span class="currency">{{bank.doubt.totalSum | currency: 'RUB':'symbol-narrow'}}</span>
             </div>
             </div>
     </div>

@@ -1,3 +1,14 @@
 <div [routerLink]="['/doubts/doubt-list']" class="btn">Назад</div>
 
 <app-doubt-item [bank]="currentBank"></app-doubt-item>
+
+<div class="tab-navigation">
+    <div class="tab-button doubt-list"
+        [routerLink]="['/doubt/' [currentBank ? currentBank.id : 0], '/set-pay']"
+        routerLinkActive="active">Внести платеж</div>
+    <div class="tab-button common-info"
+        [routerLink]="['/doubt/', [currentBank ? currentBank.id : 0], '/history']"
+        routerLinkActive="active">История</div>
+</div>
+<!-- <app-pay-history [bank]="currentBank"></app-pay-history> -->
+ <router-outlet></router-outlet>
