@@ -1,29 +1,52 @@
-<form>
-    <div class="select">
-        <div id="payOrNot" class="select">
-            <div class="pays pay"
-                (click)="isPayBackSelect = false"
-                [class.active]="!isPayBackSelect">Списать</div>
-            <div class="pays pay-back"
-                (click)="isPayBackSelect = true"
-                [class.active]="isPayBackSelect">Начислить</div>
+
+<ng-template [ngIf]="isOpenForm">
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="select">
+            <div id="payOrNot" class="select">
+                <div class="pays pay"
+                    (click)="isChargeDoubt = false"
+                    [class.active]="!isChargeDoubt">Списать</div>
+                <div class="pays pay-back"
+                    (click)="isChargeDoubt = true"
+                    [class.active]="isChargeDoubt">Начислить</div>
+            </div>
         </div>
-    </div>
 
-    <div class="control">
-        <label for="sum">Сумма</label>
-        <input id="sum" type="number" placeholder="Например: 5000">
-    </div>
+        <div class="control">
+            <label for="sum">Сумма</label>
+            <input id="sum"
+                type="number"
+                placeholder="Например: 5000"
+                formControlName="sum">
+        </div>
 
-    <div class="control">
-        <label for="monthes">Сократить количество месяцев на:</label>
-        <input id="monthes" type="number" placeholder="Например: 1">
-    </div>
+        <div class="control">
+            <label for="monthes">Сократить количество месяцев на:</label>
+            <input id="monthes"
+                type="number"
+                placeholder="Например: 1"
+                formControlName="monthes">
+        </div>
 
-    <div class="control">
-        <label for="years">Сократить количество лет на:</label>
-        <input id="years" type="number" placeholder="Например: 1">
-    </div>
+        <div class="control">
+            <label for="years">Сократить количество лет на:</label>
+            <input id="years"
+                type="number"
+                placeholder="Например: 1"
+                formControlName="years">
+        </div>
 
-    <button class="btn btn-send-pay">Подтвердить</button>
-</form>
+        <div class="control">
+            <label for="reason">Причина: </label>
+            <input id="reason"
+                type="text"
+                placeholder="Например: проценты про кредитке"
+                formControlName="reason">
+        </div>
+
+        <button class="btn btn-send-pay" type="submit" [disabled]="!this.form.valid">Подтвердить</button>
+    </form>
+</ng-template>
+<div class="open-form" (click)="isOpenForm = !isOpenForm">
+    {{isOpenForm ? 'Закрыть' : 'Открыть'}}
+</div>

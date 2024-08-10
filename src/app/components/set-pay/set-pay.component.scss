@@ -5,11 +5,20 @@ form {
     border-bottom: 1px solid #000;
     padding: 10px;
     .control {
-        border-bottom: 1px dashed #000;
         padding: 7px;
         display: flex;
         flex-direction: column;
-        margin-bottom: 15px;
+        margin-bottom: 0px;
+
+        label {
+            color: #222;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
     }
 
     .select {
@@ -29,4 +38,14 @@ form {
             background: rgb(163, 223, 241);
         }
     }
+}
+
+.open-form {
+    width: 200px;
+    margin: 20px auto 0;
+    text-align: center;
+    line-height: 3;
+    background: rgba(1, 1, 1, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 #000;
 }

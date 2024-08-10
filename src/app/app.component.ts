@@ -7,7 +7,7 @@ import {ModalService} from './system/services/modal.service';
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnChanges{
     @ViewChild('modal', {read: TemplateRef}) modal!: TemplateRef<unknown>;
     @ViewChild('viewport', {read: ViewContainerRef}) private readonly viewport!: ViewContainerRef;
 
@@ -16,6 +16,11 @@ export class AppComponent implements OnInit{
     ){}
 
     ngOnInit(): void {
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log(changes);
+
     }
 
     public closeModal(event: boolean) {

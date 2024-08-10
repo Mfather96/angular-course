@@ -14,10 +14,10 @@ export class DoubtService {
       doubt: {
         monthes: 360,
         payPerMonth: 42000,
-        totalSum: 2570000,
+        totalSum: 2532000,
         years: 30,
         interestRate: 19.7,
-        payed: 0,
+        payed: 4000,
       }
     },
     {
@@ -64,9 +64,9 @@ export class DoubtService {
       id: 5,
       creditName: 'Заём для риелтора',
       doubt: {
-        monthes: 12,
+        monthes: 11,
         payPerMonth: 5000,
-        totalSum: 60000,
+        totalSum: 55000,
         years: 0,
         interestRate: 0,
         payed: 5000,
@@ -77,24 +77,31 @@ export class DoubtService {
       id: 6,
       creditName: 'Рассрочка за ноут',
       doubt: {
-        monthes: 10,
+        monthes: 9,
         payPerMonth: 6000,
-        totalSum: 58000,
+        totalSum: 52000,
         years: 0,
         interestRate: 30,
-        payed: 12000,
+        payed: 18000,
       }
     },
   ];
 
-  constructor() { }
+  constructor(
+  ) { }
 
   public getBanks(): IBank[] | null {
     return this.banks
   }
 
   public setBank(bankConfig: IBank): void {
-    this.banks?.push(bankConfig)
+    this.banks = this.banks.map((bank) => {
+        if(bank.id === bankConfig.id) {
+            return bankConfig;
+        } else {
+            return bank
+        }
+    });
   }
 
   public getDoubt(idBank: number): IDoubt | undefined {

@@ -16,6 +16,6 @@
 </ng-template>
 
 <ng-template #setPay>
-    <app-set-pay [bank]="currentBank"></app-set-pay>
+    <app-set-pay [bank]="currentBank" (sendingPay)="sendPay($event)"></app-set-pay>
 </ng-template>
  <!-- <router-outlet></router-outlet> -->

@@ -22,8 +22,20 @@ export interface ITotalInfo {
 
 export interface IHistoryPay {
     bank: string,
+    bankId: string,
     creditName: string,
     sumPay: number,
     sumBack: number,
-    reason: string,
+    reason?: string,
+}
+
+export interface IHistory {
+    [key: string]: any[];
+}
+
+export interface IFormValue {
+    sum: number,
+    monthes: number,
+    years: number,
+    reason?: string,
 }
