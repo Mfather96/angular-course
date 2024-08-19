@@ -16,6 +16,7 @@ import {DoubtListPageModule} from './pages/doubt-list-page/doubt-list-page.modul
 import { CommonInfoComponent } from './components/common-info/common-info.component';
 import { PayHistoryComponent } from './components/pay-history/pay-history.component';
 import { SetPayComponent } from './components/set-pay/set-pay.component';
+import { AbstractComponent } from './components/abstract/abstract.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { SetPayComponent } from './components/set-pay/set-pay.component';
         CommonInfoComponent,
         PayHistoryComponent,
         SetPayComponent,
+        AbstractComponent,
     ],
     imports: [
         BrowserModule,

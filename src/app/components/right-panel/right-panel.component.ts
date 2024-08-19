@@ -1,9 +1,10 @@
-import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-right-panel',
   templateUrl: './right-panel.component.html',
-  styleUrl: './right-panel.component.scss'
+  styleUrl: './right-panel.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RightPanelComponent implements OnInit{
 

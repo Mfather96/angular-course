@@ -7,7 +7,7 @@ import { IBank } from '../../system/interfaces/interface';
   styleUrl: './doubt-item.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DoubtItemComponent implements OnInit, DoCheck{
+export class DoubtItemComponent implements OnInit {
   @Input() bank: IBank | null = null;
   public isOpenDescription: boolean = false;
 
@@ -19,12 +19,7 @@ export class DoubtItemComponent implements OnInit, DoCheck{
       this.cdr.markForCheck()
   }
 
-  ngDoCheck(): void {
-      this.cdr.markForCheck()
-  }
-
   public toggleDescription(): void {
     this.isOpenDescription = !this.isOpenDescription
   }
-
 }

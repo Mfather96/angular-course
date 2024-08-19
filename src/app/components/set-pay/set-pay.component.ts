@@ -3,6 +3,7 @@ import {IBank} from '../../system/interfaces/interface';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {SetPayService} from '../../system/services/set-pay.service';
 import {DoubtService} from '../../system/services/doubt.service';
+import {AbstractComponent} from '../abstract/abstract.component';
 
 @Component({
   selector: 'app-set-pay',
@@ -10,7 +11,7 @@ import {DoubtService} from '../../system/services/doubt.service';
   styleUrl: './set-pay.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SetPayComponent implements OnInit{
+export class SetPayComponent extends AbstractComponent implements OnInit{
     @Input() bank: IBank | null = null;
     @Output() sendingPay = new EventEmitter<boolean>();
 
@@ -23,7 +24,7 @@ export class SetPayComponent implements OnInit{
         private doubtService: DoubtService,
         private cdr: ChangeDetectorRef
     ) {
-
+        super();
     }
 
     ngOnInit(): void {

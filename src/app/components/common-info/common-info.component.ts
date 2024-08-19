@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {DoubtService} from '../../system/services/doubt.service';
 import {IBank, ITotalInfo} from '../../system/interfaces/interface';
 
 @Component({
   selector: 'app-common-info',
   templateUrl: './common-info.component.html',
-  styleUrl: './common-info.component.scss'
+  styleUrl: './common-info.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CommonInfoComponent implements OnInit{
     public totalInfo: ITotalInfo = {

@@ -1,0 +1,22 @@
+.container {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    .row {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 5px;
+
+        &.positive {
+            background: rgb(168, 243, 168);
+            border: 1px dashed rgb(1, 90, 1);
+        }
+
+        &.negative {
+            background: rgb(243, 177, 168);
+            border: 1px dashed rgb(90, 7, 1);
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {IHistory, IHistoryPay} from '../interfaces/interface';
+import {IHistory, IHistoryPay} from '../../components/pay-history/pay-history.interface';
+import {IBank} from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,14 @@ export class HistoryService {
     constructor() { }
 
     public addToHistory(pay: IHistoryPay): void {
-        this.history[pay.bankId].push(pay);
-        console.log(this.history);
-
+        if (Array.isArray(this.history[pay.bankId.toString()])) {
+            this.history[pay.bankId.toString()].push(pay);
+            console.log(this.history);
+            return
+        } else {
+            this.history[pay.bankId.toString()] = [];
+            this.history[pay.bankId.toString()].push(pay);
+            console.log(this.history);
+        }
     }
 }

@@ -1,10 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { delay, filter, fromEvent, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.scss'
+  styleUrl: './main-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainPageComponent implements OnInit{
     @Output() openingModal = new EventEmitter<boolean>()

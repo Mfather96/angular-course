@@ -1,5 +1,15 @@
-<div *ngIf="history.length; else empty">
+<div *ngIf="history; else empty" class="container">
+    <div *ngFor="let row of history"
+        class="row"
+        [class.positive]="row.sumPay > 0"
+        [class.negative]="row.sumBack > 0">
+        <div class="bank">{{row.bank}}</div>
+        <div class="creditName">{{row.creditName}}</div>
+        <div class="sum">
+            {{row.sumPay > 0 ? }}
+        </div>
 
+    </div>
 </div>
 
 <ng-template #empty>

@@ -26,7 +26,14 @@ export class SetPayService {
             },
         };
 
-        this.doubtService.setBank(modifyBank)
+        this.doubtService.setBank(modifyBank);
+        this.historyService.addToHistory({
+            bank: bank.name,
+            bankId: bank.id,
+            creditName: bank.creditName,
+            sumPay: form.sum,
+            sumBack: 0,
+        })
 
     }
 
@@ -43,6 +50,13 @@ export class SetPayService {
             },
         };
 
-        this.doubtService.setBank(modifyBank)
+        this.doubtService.setBank(modifyBank);
+        this.historyService.addToHistory({
+            bank: bank.name,
+            bankId: bank.id,
+            creditName: bank.creditName,
+            sumPay: 0,
+            sumBack: form.sum,
+        })
     }
 }

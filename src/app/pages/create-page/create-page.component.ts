@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IBank } from '../../system/interfaces/interface';
 import { DoubtService } from '../../system/services/doubt.service';
@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
-  styleUrl: './create-page.component.scss'
+  styleUrl: './create-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreatePageComponent implements OnInit{
 

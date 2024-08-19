@@ -9,7 +9,7 @@ import { Route, Router } from '@angular/router';
   styleUrl: './doubt-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DoubtPageComponent implements OnInit, DoCheck{
+export class DoubtPageComponent implements OnInit {
     public currentBank: IBank | null = null;
     public payHistory: boolean | null = null;
     private banks: IBank[] | null = null;
@@ -21,12 +21,7 @@ export class DoubtPageComponent implements OnInit, DoCheck{
     ) {}
 
     ngOnInit(): void {
-        this.banks = this.doubtService.getBanks();
-        this.currentBank = this.getCurrentBank();
-    }
-
-    ngDoCheck(): void {
-        this.currentBank = this.getCurrentBank();
+        this.updateBanks();
         this.cdr.markForCheck()
     }
 
@@ -40,8 +35,14 @@ export class DoubtPageComponent implements OnInit, DoCheck{
         }
     }
 
+    private updateBanks(): void {
+        this.banks = this.doubtService.getBanks();
+        this.currentBank = this.getCurrentBank();
+    }
+
     public sendPay(event: boolean) {
         this.payHistory = event;
+        this.updateBanks();
         this.cdr.markForCheck()
     }
 }
