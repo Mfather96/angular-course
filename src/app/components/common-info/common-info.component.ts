@@ -14,13 +14,16 @@ export class CommonInfoComponent implements OnInit{
         commonPayPerMonth: 0,
         commonPayedAlready: 0,
     };
+    public expandAdditional: boolean = false;
 
-    private allBanks: IBank[] | null = this.doubtService.getBanks();
+    public allBanks: IBank[] | null = this.doubtService.getBanks();
 
     constructor(private doubtService: DoubtService) {}
 
     ngOnInit(): void {
         this.getAllTotalInfo();
+        console.log(this.allBanks);
+
     }
 
     private getAllTotalInfo() {

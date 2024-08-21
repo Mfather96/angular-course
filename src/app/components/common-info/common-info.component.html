@@ -4,22 +4,32 @@
             <span>Общая сумма долга</span>
             <span class="currency">{{totalInfo.commonDoubtSum | currency: 'RUB':'symbol-narrow'}}</span>
         </div>
-        <div class="additional">
-            <p>За кредит 1000</p>
-            <p>За ипотеку 42000</p>
-            <p>За за сберовский кредит 15000</p>
-            <p>За кредитку 3000</p>
+
+        <div class="additional" [class.expanded]="expandAdditional">
+            <div *ngFor="let bank of allBanks" class="pay-per-month-row">
+                <span>{{bank.creditName}}</span>
+                <span>{{bank.doubt.payPerMonth | currency: 'RUB':'symbol-narrow'}}</span>
+            </div>
+        </div>
+        <div class="additional-title"
+            (click)="expandAdditional = !expandAdditional; $event.stopPropagation()"
+            [class.expanded]="expandAdditional">
+            <ng-container [ngTemplateOutlet]="iconArrowDown"></ng-container>
+            Общий платеж в месяц:
+            <span class="currency">{{totalInfo.commonPayPerMonth | currency: 'RUB':'symbol-narrow'}}</span>
+            <ng-container [ngTemplateOutlet]="iconArrowDown"></ng-container>
         </div>
     </div>
     <div class="line-container">
         <div class="total-info total-pay-per-month">
-            <span>Общая сумма платежей в месяц</span>
-            <span class="currency">{{totalInfo.commonPayPerMonth | currency: 'RUB':'symbol-narrow'}}</span>
-        </div>
-
-        <div class="total-info total-pay-per-month">
-            <span>Всего выплачено за всё время</span>
+            <span>Всего выплачено за всё время:</span>
             <span class="currency positive">{{totalInfo.commonPayedAlready | currency: 'RUB':'symbol-narrow'}}</span>
         </div>
     </div>
 </div>
+
+<ng-template #iconArrowDown>
+    <svg class="arrow" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.9997 3.67163L12.9997 3.67163L12.9997 16.4999L16.2423 13.2574L17.6565 14.6716L11.9996 20.3285L6.34277 14.6716L7.75699 13.2574L10.9997 16.5002L10.9997 3.67163Z" fill="#000000"/>
+    </svg>
+</ng-template>

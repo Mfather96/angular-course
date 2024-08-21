@@ -15,12 +15,10 @@ export class HistoryService {
     public addToHistory(pay: IHistoryPay): void {
         if (Array.isArray(this.history[pay.bankId.toString()])) {
             this.history[pay.bankId.toString()].push(pay);
-            console.log(this.history);
             return
         } else {
             this.history[pay.bankId.toString()] = [];
             this.history[pay.bankId.toString()].push(pay);
-            console.log(this.history);
         }
     }
 }

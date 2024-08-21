@@ -33,6 +33,8 @@ export class SetPayService {
             creditName: bank.creditName,
             sumPay: form.sum,
             sumBack: 0,
+            date: new Date(),
+            reason: form.reason,
         })
 
     }
@@ -57,6 +59,8 @@ export class SetPayService {
             creditName: bank.creditName,
             sumPay: 0,
             sumBack: form.sum,
+            date: new Date(),
+            reason: form.reason
         })
     }
 }

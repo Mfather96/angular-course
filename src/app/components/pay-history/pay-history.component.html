@@ -5,10 +5,15 @@
         [class.negative]="row.sumBack > 0">
         <div class="bank">{{row.bank}}</div>
         <div class="creditName">{{row.creditName}}</div>
-        <div class="sum">
-            {{row.sumPay > 0 ? }}
+        <div class="title-row">{{row.sumPay > 0 ? 'Погашено ' : 'Потрачено '}}</div>
+
+        <div class="sum currency" [class.positive]="row.sumPay > 0">
+            {{row.sumPay == 0 ? '' : row.sumPay | currency: 'RUB':'symbol-narrow'}}
+            {{row.sumBack == 0 ? '' : '-'+row.sumBack | currency: 'RUB':'symbol-narrow'}}
         </div>
 
+        <div class="reason">{{row.reason}}</div>
+        <div class="date">{{row.date | date:'dd.MM.yyyy'}}</div>
     </div>
 </div>
 

@@ -4,6 +4,7 @@ export interface IHistoryPay {
     creditName: string,
     sumPay: number,
     sumBack: number,
+    date: Date,
     reason?: string,
 }
 
